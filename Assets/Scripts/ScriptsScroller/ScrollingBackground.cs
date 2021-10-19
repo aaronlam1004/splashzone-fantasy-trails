@@ -12,6 +12,6 @@ public class ScrollingBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        backRenderer.material.mainTextureOffset += new Vector2(-1 *backSpeed * Time.deltaTime, 0);
+        backRenderer.material.mainTextureOffset += new Vector2(-1 * backSpeed * Time.deltaTime, 0);
     }
 }
