@@ -13,9 +13,6 @@ public class CharacterSelect : MonoBehaviour
     protected GameObject CharacterSelectMenu;
 
     [SerializeField]
-    protected GameObject CharacterCustomizationMenu;
-
-    [SerializeField]
     protected GameObject VillagerNamingMenu;
 
     // -- Character Selection --
@@ -50,7 +47,9 @@ public class CharacterSelect : MonoBehaviour
         {
             chosenHero = 0;
         }
+        ChooseHero(chosenHero);
         ShowHero();
+        ListStats();
     }
 
     public void SelectPreviousHero()
@@ -60,7 +59,9 @@ public class CharacterSelect : MonoBehaviour
         {
             chosenHero = 2;
         }
+        ChooseHero(chosenHero);
         ShowHero();
+        ListStats();
     }
 
     protected Hero hero;
@@ -69,19 +70,16 @@ public class CharacterSelect : MonoBehaviour
         switch (choice)
         {
             case 0:
-                hero = new Hero(0, 7, 5, 5);
+                hero = new Hero(0);
                 break;
             case 1:
-                hero = new Hero(1, 5, 7, 5);
+                hero = new Hero(1);
                 break;
             case 2:
-                hero = new Hero(2, 5, 5, 7);
+                hero = new Hero(2);
                 break;
         }
     }
-
-    // -- Character Customization --
-    [Header(("Character Customization Events"))]
 
     [SerializeField]
     protected TMP_InputField heroNameInput;
@@ -91,53 +89,9 @@ public class CharacterSelect : MonoBehaviour
     
     public void ListStats()
     {
-        characterStats[0].text = hero.Health.ToString();
-        characterStats[1].text = hero.Strength.ToString();
-        characterStats[2].text = hero.Mana.ToString();
-        characterStats[3].text = hero.Luck.ToString();
-    }
-    
-    void ChangeStats(int statIndex, int amount)
-    {
-        switch (statIndex)
-        {
-            case 0:
-                hero.Health += amount;
-                characterStats[statIndex].text = hero.Health.ToString();
-                break;
-            case 1:
-                hero.Strength += amount;
-                characterStats[statIndex].text = hero.Strength.ToString();
-                break;
-            case 2:
-                hero.Mana += amount;
-                characterStats[statIndex].text = hero.Mana.ToString();
-                break;
-            case 3:
-                hero.Luck += amount;
-                characterStats[statIndex].text = hero.Luck.ToString();
-                break;
-        }
-    }
-
-    public void IncreaseStats(int statIndex)
-    {
-        ChangeStats(statIndex, 1);
-    }
-
-    public void DecreaseStats(int statIndex)
-    {
-        ChangeStats(statIndex, -1);
-    }
-
-
-    [SerializeField]
-    protected Slider moralitySlider;
-
-    public void SlideByInterval(int interval)
-    {
-        int value = Mathf.RoundToInt(moralitySlider.value / interval) * interval;
-        moralitySlider.value = value;
+        characterStats[0].text = $"Strength: <color=#AD0000><size=40>{hero.Strength.ToString()}</size></color>";
+        characterStats[1].text = $"Dexterity: <color=#AD0000><size=40>{hero.Dexterity.ToString()}</size></color>";
+        characterStats[2].text = $"Intelligence: <color=#AD0000><size=40>{hero.Intelligence.ToString()}</size></color>";
     }
 
 
@@ -146,6 +100,19 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField]
     protected TMP_InputField[] villagerNames;
 
+    // -- Menu functions --
+    public void MakeSelection()
+    {
+        CharacterSelectMenu.SetActive(false);
+        VillagerNamingMenu.SetActive(true);
+    }
+    
+    public void GoBack()
+    {
+        CharacterSelectMenu.SetActive(true);
+        VillagerNamingMenu.SetActive(false);
+    }
+
     public void BeginJourney()
     {
         for (int i = 0; i < villagerNames.Length; i++)
@@ -153,28 +120,13 @@ public class CharacterSelect : MonoBehaviour
             PlayerPrefs.villagers[i] = new Person(villagerNames[i].text);
         }
         PlayerPrefs.hero = hero;
-        SceneManager.LoadScene("Game");
-    }
-
-    // -- Menu functions --
-    public void MakeSelection()
-    {
-        ChooseHero(chosenHero);
-        CharacterSelectMenu.SetActive(false);
-        CharacterCustomizationMenu.SetActive(true);
-        heroNameInput.text = hero.Name;
-        ListStats();
-    }
-
-    public void ConfirmCustomization()
-    {
-        hero.Name = heroNameInput.text;
-        CharacterCustomizationMenu.SetActive(false);
-        VillagerNamingMenu.SetActive(true);
+        SceneManager.LoadScene("Sthopping");
     }
 
     void Start()
     {
+        ChooseHero(chosenHero);
         ShowHero();
+        ListStats();
     }
 }
