@@ -4,11 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Item {
-    // durability?
-    // stats
-}
-
 public class Person
 {
     protected String name;
@@ -40,14 +35,14 @@ public class Hero : Person
     protected int strength;
     protected int detexterity;
     protected int intelligence;
-    protected int gold;
+    protected int aurum;
     protected int distance;
 
     public int HeroType { get; }
     public int Strength { get ; set; }
     public int Dexterity { get; set; }
     public int Intelligence { get; set; }
-    public int Gold { get; set; }
+    public int Aurum { get; set; }
     public int Distance { get; set; }
 
     public Hero(int htype) : base("Hero")
@@ -58,19 +53,19 @@ public class Hero : Person
                 this.Strength = 10;
                 this.Dexterity = 7;
                 this.Intelligence = 5;
-                this.Gold = 100;
+                this.Aurum = 100;
                 break;
             case 1:
                 this.Strength = 7;
                 this.Dexterity = 5;
                 this.Intelligence = 10; 
-                this.Gold = 75;
+                this.Aurum = 75;
                 break;
             case 2:
                 this.Strength = 5;
                 this.Dexterity = 10;
                 this.Intelligence = 7;
-                this.Gold = 25;
+                this.Aurum = 25;
                 break;
         }
     }
