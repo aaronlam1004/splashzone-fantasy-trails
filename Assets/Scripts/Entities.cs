@@ -37,6 +37,7 @@ public class Hero : Person
     protected int intelligence;
     protected int aurum;
     protected int distance;
+    protected String description;
 
     public int HeroType { get; }
     public int Strength { get ; set; }
@@ -44,6 +45,8 @@ public class Hero : Person
     public int Intelligence { get; set; }
     public int Aurum { get; set; }
     public int Distance { get; set; }
+    public String Description { get; set; }
+
 
     public Hero(int htype) : base("Hero")
     {
@@ -54,18 +57,27 @@ public class Hero : Person
                 this.Dexterity = 7;
                 this.Intelligence = 5;
                 this.Aurum = 100;
+                this.Description = "A two handed sword wielder who uses Strength. " +
+                "You're a representative of a bordering kingdom ent to help with the " +
+                "relief effort.";
                 break;
             case 1:
                 this.Strength = 7;
                 this.Dexterity = 5;
                 this.Intelligence = 10; 
                 this.Aurum = 75;
+                this.Description = "A book user who utilizes Intelligence. " + 
+                "You’re a researcher who follows the Elemental Pantheon of this world " +
+                "and knows magic from your time studying the elements.";
                 break;
             case 2:
                 this.Strength = 5;
                 this.Dexterity = 10;
                 this.Intelligence = 7;
                 this.Aurum = 25;
+                this.Description = "A dagger user who utilizes Dexterity. " + 
+                "You’re a member of a Thieves Guild called the Midnightgarde - " +
+                "a notorious spy network wary of the Lich’s plan.";
                 break;
         }
     }

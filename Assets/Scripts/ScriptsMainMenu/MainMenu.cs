@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject HomeMenu;
+    public GameObject AboutMenu;
+
     public void VentureForth()
     {
         SceneManager.LoadScene("Character Select");
@@ -15,5 +17,17 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("You Quit");
         Application.Quit();
+    }
+
+    public void GoToAbout()
+    {
+        AboutMenu.SetActive(true);
+        HomeMenu.SetActive(false);
+    }
+
+    public void GoToHome()
+    {
+        HomeMenu.SetActive(true);
+        AboutMenu.SetActive(false);
     }
 }

@@ -38,7 +38,7 @@ public class CharacterSelect : MonoBehaviour
     }
 
     [SerializeField]
-    protected int chosenHero = 0;
+    public static int chosenHero = 0;
 
     public void SelectNextHero()
     {
@@ -50,6 +50,7 @@ public class CharacterSelect : MonoBehaviour
         ChooseHero(chosenHero);
         ShowHero();
         ListStats();
+        ShowDescription();
     }
 
     public void SelectPreviousHero()
@@ -62,6 +63,7 @@ public class CharacterSelect : MonoBehaviour
         ChooseHero(chosenHero);
         ShowHero();
         ListStats();
+        ShowDescription();
     }
 
     protected Hero hero;
@@ -89,11 +91,17 @@ public class CharacterSelect : MonoBehaviour
     
     public void ListStats()
     {
-        characterStats[0].text = $"Strength: <color=#AD0000><size=40>{hero.Strength.ToString()}</size></color>";
-        characterStats[1].text = $"Dexterity: <color=#AD0000><size=40>{hero.Dexterity.ToString()}</size></color>";
-        characterStats[2].text = $"Intelligence: <color=#AD0000><size=40>{hero.Intelligence.ToString()}</size></color>";
+        characterStats[0].text = $"Strength: <color=#AD0000><size=90>{hero.Strength.ToString()}</size></color>";
+        characterStats[1].text = $"Dexterity: <color=#AD0000><size=90>{hero.Dexterity.ToString()}</size></color>";
+        characterStats[2].text = $"Intelligence: <color=#AD0000><size=90>{hero.Intelligence.ToString()}</size></color>";
     }
 
+    [SerializeField]
+    protected TMP_Text characterDescription;
+    public void ShowDescription()
+    {
+        characterDescription.text = hero.Description;
+    }
 
     // -- Villager Name Select -- 
     [Header(("Villager Name Events"))]
@@ -128,5 +136,6 @@ public class CharacterSelect : MonoBehaviour
         ChooseHero(chosenHero);
         ShowHero();
         ListStats();
+        ShowDescription();
     }
 }
