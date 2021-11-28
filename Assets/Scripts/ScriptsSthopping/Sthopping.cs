@@ -1,18 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Sthopping : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void VentureOff()
     {
-        Debug.Log(PlayerPrefs.hero.Name);
+        SceneManager.LoadScene("Overworld");
     }
 
-    // Update is called once per frame
-    void Update()
+    [Header(("Menus"))]
+    [SerializeField]
+    protected GameObject HomeMenu;
+
+    [SerializeField]
+    protected GameObject ShoppingMenu;
+    
+    [SerializeField]
+    protected GameObject InventoryMenu;
+
+    [SerializeField]
+    public void ShowShopping()
     {
-        
+        HomeMenu.SetActive(false);
+        ShoppingMenu.SetActive(true);
+    }
+
+    public void GoHome()
+    {
+        HomeMenu.SetActive(true);
+        ShoppingMenu.SetActive(false);
+        InventoryMenu.SetActive(false);
+    }
+
+    public void GoInventory()
+    {
+        InventoryMenu.SetActive(true);
+        HomeMenu.SetActive(false);
     }
 }

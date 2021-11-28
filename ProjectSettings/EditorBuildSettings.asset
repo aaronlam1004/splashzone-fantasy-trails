@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sthopping.unity
     guid: b249ce6629fb42c43b8f0d14991260ff
+  - enabled: 1
+    path: Assets/Scenes/Overworld.unity
+    guid: 4c2e0a5558db58642a1f9e43952bf831
   m_configObjects: {}

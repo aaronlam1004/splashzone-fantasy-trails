@@ -127,6 +127,7 @@ public class CharacterSelect : MonoBehaviour
         {
             PlayerPrefs.villagers[i] = new Person(villagerNames[i].text);
         }
+        hero.Name = heroNameInput.text;
         PlayerPrefs.hero = hero;
         SceneManager.LoadScene("Sthopping");
     }
