@@ -18,6 +18,11 @@ public class GlobalControl : MonoBehaviour
     public bool l3Reached;
     public bool l4Reached;
 
+    // Player Data
+    public int Food;
+    public int Morale;
+
+
     // The Singleton Design Pattern (outdated apparently)
     void Awake()
     {

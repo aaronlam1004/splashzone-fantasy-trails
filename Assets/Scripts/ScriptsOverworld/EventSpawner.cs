@@ -86,9 +86,9 @@ public class EventSpawner : MonoBehaviour
     void SpawnEvent()
     {
         // Guarantee Event doesn't spawn on Landmark
-        if (tdm.Distance >= 181f - 32f && tdm.Distance < 181f + 8f) { }
-        else if (tdm.Distance >= 362f - 32f && tdm.Distance < 362f + 8f) { }
-        else if (tdm.Distance >= 543f - 32f && tdm.Distance < 543f + 8f) { }
+        if (tdm.Distance >= 181f - 32f && tdm.Distance < 181f + 16f) { }
+        else if (tdm.Distance >= 362f - 32f && tdm.Distance < 362f + 16f) { }
+        else if (tdm.Distance >= 543f - 32f && tdm.Distance < 543f + 16f) { }
         else if (tdm.Distance >= 724f - 32f && tdm.Distance < 724f + 128f) { }
 
         // Else Generate Random Events (sprite indexes 4-15, 11 total)
