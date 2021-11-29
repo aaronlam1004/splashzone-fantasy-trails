@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Background
+  - Event
+  - Landmark
   layers:
   - Default
   - TransparentFX
@@ -41,4 +43,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1141793097
+    locked: 0
+  - name: GameObjects
+    uniqueID: 3979911439
+    locked: 0
+  - name: Panel
+    uniqueID: 901482867
+    locked: 0
+  - name: UI
+    uniqueID: 410373511
+    locked: 0
+  - name: UI Text
+    uniqueID: 3817640089
     locked: 0

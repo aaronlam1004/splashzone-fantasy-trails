@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Help from: https://www.youtube.com/watch?v=4YQVrs46f6k
 public class EventMovementController : MonoBehaviour
 {
     [SerializeField] private BoxCollider2D boxCollider;

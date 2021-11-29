@@ -17,4 +17,52 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld.unity
     guid: 4c2e0a5558db58642a1f9e43952bf831
+<<<<<<< Updated upstream
+=======
+  - enabled: 1
+    path: Assets/Scenes/Levels/Landmark1.unity
+    guid: 6dd0aa34abde9954491c504eed01b17a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Landmark2.unity
+    guid: 5bce80fd6318376499e77d40921721ad
+  - enabled: 1
+    path: Assets/Scenes/Levels/Landmark3.unity
+    guid: 75968f627b9a3b540a04bd5129beb1ea
+  - enabled: 1
+    path: Assets/Scenes/Levels/Landmark4.unity
+    guid: 331c729d22afc8a458bca1dff2cb799d
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdCheckBoulder.unity
+    guid: 188cf4c93d1cbe24eb3310c472bf15f2
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdCheckHouse.unity
+    guid: c2aee8c0b3d44554bb3f4f5555bda0c2
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdCheckRiver.unity
+    guid: fd39c98214d22c64c80a78d75b50f5b3
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdCmbtGraveyard.unity
+    guid: e1bddca4be3ea0d409260d59895bdf6f
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdCmbtScouts.unity
+    guid: b10c542e241f8154aa749ded5ff4a8e6
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdCmbtSlime.unity
+    guid: 812cfc6dbf2c8de49ad841daf034519f
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdDiaMerchant.unity
+    guid: 28244727e6381a648ac2b96ad0423e54
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdDiaVillagers.unity
+    guid: 021e8651461091143a4f7d8d5b248708
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdFoodBerry.unity
+    guid: 00159e24d84855c41a241f12420d4cd2
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdFoodDeer.unity
+    guid: 57243cfd2ab93624b850497bb51d747a
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdItem.unity
+    guid: ea998c3c188d6164eb605f17b18959cb
+>>>>>>> Stashed changes
   m_configObjects: {}
