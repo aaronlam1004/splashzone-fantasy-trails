@@ -73,7 +73,9 @@ public class SthoppingStore : MonoBehaviour
     public TMP_Text HeroGold;
     public void ShowHeroProfile()
     {
-        HeroProfile.text = $"<b>{PlayerPrefs.hero.Name}</b> [{PlayerPrefs.hero.Health}/{PlayerPrefs.hero.Morale}/{PlayerPrefs.hero.Clothes}]\n" +
+        HeroProfile.text = $"<b><i>{PlayerPrefs.hero.Name}</i></b> "+
+                           $"[<color=#FF0000>{PlayerPrefs.hero.Health}</color>/" +
+                           $"<color=#DBAC00>{PlayerPrefs.hero.Morale}</color>/{PlayerPrefs.hero.Clothes}]\n" +
                            $"<u>Strength:</u> {PlayerPrefs.hero.Strength}\n" + 
                            $"<u>Dexterity:</u> {PlayerPrefs.hero.Dexterity}\n" + 
                            $"<u>Intelligence:</u> {PlayerPrefs.hero.Intelligence}\n";
@@ -87,7 +89,9 @@ public class SthoppingStore : MonoBehaviour
         for (var i = 0; i < 4; i++)
         {
             Person villager = PlayerPrefs.villagers[i];
-            VillagerProfiles[i].text = $"<b>{villager.Name}</b> [{villager.Health}/{villager.Morale}/{PlayerPrefs.hero.Clothes}]";
+            VillagerProfiles[i].text = $"<b><i>{villager.Name}</i></b>" +
+                                       $"[<color=#FF0000>{villager.Health}</color>/" +
+                                       $"<color=#DBAC00>{villager.Morale}</color>/{PlayerPrefs.hero.Clothes}]";
         }
     }
 

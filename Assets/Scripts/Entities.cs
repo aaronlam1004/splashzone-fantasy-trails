@@ -24,8 +24,7 @@ public class Person
 
 public class Hero : Person
 {
-    // 0: knight, 1: mage, 2: rouge
-    public int HeroType { get; }
+    public int HeroType { get; } // 0: knight, 1: mage, 2: rogue
     public int Strength { get ; set; }
     public int Dexterity { get; set; }
     public int Intelligence { get; set; }

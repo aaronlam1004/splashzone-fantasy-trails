@@ -33,10 +33,62 @@ public class PlayerController : MonoBehaviour
         set => _eventTypeTriggered = value; // MUTATOR
     }
 
+    public Sprite[] Sprites;
+    public SpriteRenderer CharacterSprite;
+    public GameObject[] VillagerSprites;
+
+    int index = 0;
     // Start is called before the first frame update
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+
+        switch (PlayerPrefs.hero.HeroType)
+        {
+            case 0:
+                index = 0;
+                CharacterSprite.sprite = Sprites[index];
+                break;
+            case 1:
+                index = 2;
+                CharacterSprite.sprite = Sprites[index];
+                break;
+            default:
+                index = 4;
+                CharacterSprite.sprite = Sprites[index];
+                break;
+        }
+    }
+
+    float timer = 50;
+    void Update()
+    {
+        if (timer > 0)
+        {
+            timer -= 1;
+        }
+
+        if (timer == 0)
+        {
+            index++;
+            if (index % 2 == 0)
+            {
+                index -= 2;
+                for (int i = 0; i < VillagerSprites.Length; i++)
+                {
+                    VillagerSprites[i].transform.Translate(0, -0.25f, 0);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < VillagerSprites.Length; i++)
+                {
+                    VillagerSprites[i].transform.Translate(0, 0.25f, 0);
+                }
+            }
+            CharacterSprite.sprite = Sprites[index];
+            timer = 50;
+        }
     }
 }
