@@ -349,7 +349,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2638256404009753784, guid: 32eff16278b4bfd4fb6513d6f979d092, type: 3}
       propertyPath: m_Name
-      value: EventSpawner
+      value: EventSpawnerNevermelt
       objectReference: {fileID: 0}
     - target: {fileID: 2638256404009753786, guid: 32eff16278b4bfd4fb6513d6f979d092, type: 3}
       propertyPath: tdm
@@ -415,6 +415,22 @@ PrefabInstance:
     - target: {fileID: 669034266, guid: 671c1fc7ebcbad64cb98178f55fd06fa, type: 3}
       propertyPath: timeDistanceStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782275884847582841, guid: 671c1fc7ebcbad64cb98178f55fd06fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 26.515442
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782275884847582841, guid: 671c1fc7ebcbad64cb98178f55fd06fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -61.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782275885949369588, guid: 671c1fc7ebcbad64cb98178f55fd06fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 36.818928
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782275885949369588, guid: 671c1fc7ebcbad64cb98178f55fd06fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.712
       objectReference: {fileID: 0}
     - target: {fileID: 5782275886481921038, guid: 671c1fc7ebcbad64cb98178f55fd06fa, type: 3}
       propertyPath: m_Name

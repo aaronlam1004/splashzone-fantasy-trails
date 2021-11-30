@@ -36,17 +36,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/RdFoodDeer.unity
     guid: 57243cfd2ab93624b850497bb51d747a
   - enabled: 1
-    path: Assets/Scenes/Levels/RdItem.unity
-    guid: ea998c3c188d6164eb605f17b18959cb
-  - enabled: 1
-    path: Assets/Scenes/Levels/RdCheckRiver.unity
-    guid: fd39c98214d22c64c80a78d75b50f5b3
-  - enabled: 1
-    path: Assets/Scenes/Levels/RdCheckBoulder.unity
-    guid: 188cf4c93d1cbe24eb3310c472bf15f2
-  - enabled: 1
     path: Assets/Scenes/Levels/RdCheckHouse.unity
     guid: c2aee8c0b3d44554bb3f4f5555bda0c2
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdCheckBlizzard.unity
+    guid: 36ae77006adfc3442b92f22d4b6f4a90
+  - enabled: 1
+    path: Assets/Scenes/Levels/RdCheckWolves.unity
+    guid: 8c84d153c90f05e448b0a6888e81a043
   - enabled: 1
     path: Assets/Scenes/Levels/RdCmbtGraveyard.unity
     guid: e1bddca4be3ea0d409260d59895bdf6f
@@ -54,12 +51,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/RdCmbtSlime.unity
     guid: 812cfc6dbf2c8de49ad841daf034519f
   - enabled: 1
+    path: Assets/Scenes/Levels/RdCheckBoulder.unity
+    guid: 188cf4c93d1cbe24eb3310c472bf15f2
+  - enabled: 0
+    path: Assets/Scenes/Levels/RdItem.unity
+    guid: ea998c3c188d6164eb605f17b18959cb
+  - enabled: 0
+    path: Assets/Scenes/Levels/RdCheckRiver.unity
+    guid: fd39c98214d22c64c80a78d75b50f5b3
+  - enabled: 0
     path: Assets/Scenes/Levels/RdCmbtScouts.unity
     guid: b10c542e241f8154aa749ded5ff4a8e6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/RdDiaVillagers.unity
     guid: 021e8651461091143a4f7d8d5b248708
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/RdDiaMerchant.unity
     guid: 28244727e6381a648ac2b96ad0423e54
   m_configObjects: {}

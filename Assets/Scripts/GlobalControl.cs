@@ -12,15 +12,35 @@ public class GlobalControl : MonoBehaviour
     public float Distance;
     public float Time;
 
-    // Landmark Data
+    // Landmark Data [Don't worry about this]
     public bool l1Reached;
     public bool l2Reached;
     public bool l3Reached;
     public bool l4Reached;
 
-    // Player Data
-    public int Food;
-    public int Morale;
+    // Player Status Data
+    public int Health;
+    public int Food;        // if no food increase sickness
+    public int Morale;      // if morale low decrease stats
+    public int Clothing;    // clothes
+    public int Aurum;       // currency
+    public bool isSick;     // sickness
+
+    // Party Status Data
+    public bool villager1IsDead;
+    public bool villager1IsSick;
+
+    public bool villager2IsDead;
+    public bool villager2IsSick;
+
+    public bool villager3IsDead;
+    public bool villager3IsSick;
+
+    // Player Stats Data 
+    public int Class;       // 0: knight, 1: mage, 2: rouge
+    public int Int;
+    public int Dex;
+    public int Str;
 
 
     // The Singleton Design Pattern (outdated apparently)

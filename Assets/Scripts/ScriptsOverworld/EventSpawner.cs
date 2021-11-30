@@ -22,11 +22,6 @@ public class EventSpawner : MonoBehaviour
 
     // Event types
     private int chance;
-    private int _eventType;
-    public int EventType
-    {
-        get => _eventType; // ACCESSOR
-    }
 
     // SAVE TO GLOBAL CONTROL
     public void SaveLandmarkStatus()
@@ -46,9 +41,9 @@ public class EventSpawner : MonoBehaviour
         landmark3Reached = GlobalControl.Instance.l3Reached;
         landmark4Reached = GlobalControl.Instance.l4Reached;
 
-        // Spawn an event around every 5-8 seconds
-        spawnTime = Random.Range(5, 9);
-        spawnDelay = Random.Range(5, 9);
+        // Spawn an event around every 6-8 seconds
+        spawnTime = Random.Range(1, 3);
+        spawnDelay = Random.Range(1, 3);
         InvokeRepeating("SpawnEvent", spawnTime, spawnDelay);
     }
 
@@ -86,81 +81,54 @@ public class EventSpawner : MonoBehaviour
     void SpawnEvent()
     {
         // Guarantee Event doesn't spawn on Landmark
-        if (tdm.Distance >= 181f - 32f && tdm.Distance < 181f + 16f) { }
-        else if (tdm.Distance >= 362f - 32f && tdm.Distance < 362f + 16f) { }
-        else if (tdm.Distance >= 543f - 32f && tdm.Distance < 543f + 16f) { }
-        else if (tdm.Distance >= 724f - 32f && tdm.Distance < 724f + 128f) { }
+        if (tdm.Distance >= 181f - 40f && tdm.Distance < 181f + 16f) { }
+        else if (tdm.Distance >= 362f - 40f && tdm.Distance < 362f + 16f) { }
+        else if (tdm.Distance >= 543f - 40f && tdm.Distance < 543f + 16f) { }
+        else if (tdm.Distance >= 724f - 40f && tdm.Distance < 724f + 128f) { }
 
         // Else Generate Random Events (sprite indexes 4-15, 11 total)
         else
         {
             // BEGING IF STATEMENTS HERE (FIXME: error when near landmark)
             chance = Random.Range(1, 101);
-            if (chance >= 1 && chance <= 10) // 10% chance for berries, 1-10
+            if (chance >= 1 && chance <= 15) // 15% chance for berries, 1-15
             {
-                // 0. Berries (Food)
-                _eventType = 0;
+                // 1. Berries (Food)
                 Instantiate(eventTriggers[4], transform.position, transform.rotation);
             }
-            else if (chance >= 11 && chance <= 15) // 5% chance for deer, 11-15
+            else if (chance >= 16 && chance <= 30) // 15% chance for deer, 16-30
             {
-                // 1. Deer (Food)
-                _eventType = 1;
+                // 2. Deer (Food)
                 Instantiate(eventTriggers[5], transform.position, transform.rotation);
             }
-            else if (chance >= 16 && chance <= 25) // 10% chance for item, 16-25
+            else if (chance >= 31 && chance <= 45) // 15% chance for house, 31-45
             {
-                // 2. Present Box (Item)
-                _eventType = 2;
+                // 3. House (Item)
                 Instantiate(eventTriggers[6], transform.position, transform.rotation);
             }
-            else if (chance >= 26 && chance <= 35) // 10% chance for river, 26-35
+            else if (chance >= 46 && chance <= 55) // 10% chance for blizzard, 46-55
             {
-                // 3. River (Stat Check)
-                _eventType = 3;
+                // 4. Blizzard (Stat Check)
                 Instantiate(eventTriggers[7], transform.position, transform.rotation);
             }
-            else if (chance >= 36 && chance <= 45) // 10% chance for boulder, 36-45
+            else if (chance >= 56 && chance <= 70) // 15% chance for wolves, 56-70
             {
-                // 4. Boulder (Stat Check)
-                _eventType = 4;
+                // 5. Wolves (Stat Check)
                 Instantiate(eventTriggers[8], transform.position, transform.rotation);
             }
-            else if (chance >= 46 && chance <= 60) // 15% chance for house, 46-60
-            {
-                // 5. House (Stat Check)
-                _eventType = 5;
-                Instantiate(eventTriggers[9], transform.position, transform.rotation);
-            }
-            else if (chance >= 61 && chance <= 70) // 10% chance for graveyard, 61-70
+            else if (chance >= 71 && chance <= 80) // 10% chance for graveyard, 71-80
             {
                 // 6. Graveyard (Combat)
-                _eventType = 6;
-                Instantiate(eventTriggers[10], transform.position, transform.rotation);
+                Instantiate(eventTriggers[9], transform.position, transform.rotation);
             }
-            else if (chance >= 71 && chance < 80) // 10% chance for slime, 71-80
+            else if (chance >= 81 && chance < 95) // 15% chance for slime, 81-95
             {
                 // 7. Slime (Combat)
-                _eventType = 7;
+                Instantiate(eventTriggers[10], transform.position, transform.rotation);
+            }
+            else  // 8. Boulder (FIXME: Joke) // 5% chance for boulder, 96-100
+            {
                 Instantiate(eventTriggers[11], transform.position, transform.rotation);
-            }
-            else if (chance >= 81 && chance < 90) // 10% chance for scouts, 81-90
-            {
-                // 8. Skeleton Scouts (Combat)
-                _eventType = 8;
-                Instantiate(eventTriggers[12], transform.position, transform.rotation);
-            }
-            else if (chance >= 91 && chance < 95) // 5% chance for friendly villagers, 91-95
-            {
-                // 9. Villagers w/ Shop Basket (Dialogue)
-                _eventType = 9;
-                Instantiate(eventTriggers[13], transform.position, transform.rotation);
-            }
-            else // 10. 5% chance for travelling merchant, 96-100
-            {
-                // Merchant w/ Coin (Dialogue)
-                _eventType = 10;
-                Instantiate(eventTriggers[14], transform.position, transform.rotation);
             }
         }
 
