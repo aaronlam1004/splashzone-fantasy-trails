@@ -40,4 +40,15 @@ public class Sthopping : MonoBehaviour
         InventoryMenu.SetActive(true);
         HomeMenu.SetActive(false);
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main Menu");
+            GlobalControl.Instance.Distance = 0;
+            GlobalControl.Instance.Time = 0;
+            Time.timeScale = 0f;
+        }
+    }
 }

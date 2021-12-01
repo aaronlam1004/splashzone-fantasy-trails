@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // Help from: https://www.youtube.com/watch?v=U3sT-T5bKX4
 
@@ -58,6 +59,7 @@ public class TimeDistanceManager : MonoBehaviour
 
     void AddTimeDistance()
     {
+
         // Average human can march about 8 miles a day at a minimum
         _randomNormalDistance = Random.Range(8, 14);
         if (GameObject.FindGameObjectWithTag("Player") != null)
@@ -80,6 +82,17 @@ public class TimeDistanceManager : MonoBehaviour
             
             // SAVE TO GLOBAL CONTROL
             SaveTimeDistance();
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main Menu");
+            GlobalControl.Instance.Distance = 0;
+            GlobalControl.Instance.Time = 0;
+            Time.timeScale = 0f;
         }
     }
 }
