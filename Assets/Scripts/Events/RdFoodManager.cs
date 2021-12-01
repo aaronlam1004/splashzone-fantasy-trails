@@ -76,8 +76,9 @@ public class RdFoodManager : MonoBehaviour
         if (foodType == "Berries")
         {
             diceRoll = Random.Range(1, 21); // Roll a d20
-            Debug.Log("Berries DC: " + diceRoll);
             diceRoll += intModifier; // add int modifier
+
+            Debug.Log("Berries DC: " + diceRoll);
             Debug.Log("Berries DC + Modifiers: " + diceRoll);
 
             if (diceRoll >= 10)
@@ -130,7 +131,7 @@ public class RdFoodManager : MonoBehaviour
 
             // LOAD FAILURE SCREEN
             rTitle.text = "A Sad Mistake";
-            rDesc.text = "“Haven’t your parents ever taught you not to eat anything you see? " +
+            rDesc.text = "Haven’t your parents ever taught you not to eat anything you see? " +
                 "The fruit was rotten and extremely bitter, leaving you coughing " +
                 "and gagging in a disappointed fit.";
             rFood.text = ((int)FoodGained).ToString();

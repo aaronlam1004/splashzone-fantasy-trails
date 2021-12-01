@@ -60,7 +60,7 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
         {
             moraleLost += Random.Range(10, 11);
             clothingLost += Random.Range(10, 16);
-            healthLost += 50;
+            healthLost += 10;
             rText.text = "Remembering your mission, you endure the harsh winds and endless snowfall. " +
                 "You eventually reach the end of the blizzard, albeit shivering in pain.";
         }
@@ -68,7 +68,7 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
         {
             moraleLost += 0;
             clothingLost += Random.Range(10, 16);
-            healthLost += 15;
+            healthLost += 5;
             rText.text = "You emulate a titan of strength, and not even the icicles daggers that compose " +
                 "the blizzard's wind can stop you. The same can't be said of your clothes though.";
         }
@@ -84,7 +84,7 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
         {
             moraleLost += Random.Range(15, 21);
             clothingLost += Random.Range(10, 16);
-            healthLost += 75;
+            healthLost += 20;
             rText.text = "The blizzard's effects take a massive toll on your hope, health and sanity. " +
                 "The mountains of Nevermelt are truly a frozen hell for those unprepared.";
         }
