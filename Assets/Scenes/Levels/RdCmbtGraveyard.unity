@@ -864,8 +864,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -278.21, y: 123.67999}
-  m_SizeDelta: {x: 474.81, y: 62.88}
+  m_AnchoredPosition: {x: -278.21, y: 120.67}
+  m_SizeDelta: {x: 474.81, y: 68.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662199024
 MonoBehaviour:
@@ -1107,6 +1107,7 @@ GameObject:
   - component: {fileID: 738576238}
   - component: {fileID: 738576237}
   - component: {fileID: 738576236}
+  - component: {fileID: 738576239}
   m_Layer: 5
   m_Name: Finish
   m_TagString: Untagged
@@ -1178,7 +1179,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 738576239}
         m_TargetAssemblyTypeName: TestTransitions, Assembly-CSharp
         m_MethodName: returnToOverworld
         m_Mode: 1
@@ -1228,6 +1229,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738576234}
   m_CullTransparentMesh: 1
+--- !u!114 &738576239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738576234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1c94b5e3f87704894a4a76384158cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &742792494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.0000019073, y: -36}
+  m_AnchoredPosition: {x: -0.0000019073, y: -37.5}
   m_SizeDelta: {x: 450.31, y: 40.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &742792496
