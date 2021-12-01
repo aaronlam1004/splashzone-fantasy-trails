@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class RdGraveyardManager : MonoBehaviour
+public class RdSlimeManager : MonoBehaviour
 {
     [SerializeField] private GameObject resultCanvas;
     [SerializeField] private TextMeshProUGUI rTitle;
@@ -95,7 +95,7 @@ public class RdGraveyardManager : MonoBehaviour
         }
         Debug.Log("Grave DC + Modifier: " + diceRoll);
 
-        if (diceRoll >= 15) { success = true; }
+        if (diceRoll >= 10) { success = true; } // Easier than skeletons
         else { success = false; }
 
         if (success) // SUCCESS
@@ -107,21 +107,16 @@ public class RdGraveyardManager : MonoBehaviour
             // Class flavor text - 0: knight, 1: mage, 2: rouge
             if (playerClass == 0)
             {
-                rDesc.text = "You charge at the skeletons sword in hand. You shatter their ribs and " +
-                    "break their legs and you grind them into a nice bonemeal. Life will be born " +
-                    "from the ashes of your foe. You smile.";
+                rDesc.text = "You charge at the slimes sword in hand. You slice and dice the almost helpless " +
+                    "Winterfrost slimes.";
             }
             else if (playerClass == 1)
             {
-                rDesc.text = "You charge at the skeletons and release a ray of fire from your hands towards " +
-                    "the undead. Your foes disintegrate to nothing before they can react. Ah, the smile of " +
-                    "fire, your favorite.";
+                rDesc.text = "You blow up the attack slimes with a deftly placed fireball.";
             }
             else if (playerClass == 2)
             {
-                rDesc.text = "You launch yourself into the air and into the crowd of skeleton warriors and " +
-                    "let out a dance of fine bladework around you. By the time you open your eyes, only " +
-                    "the pieces of your skeletal foes remain on the ground.";
+                rDesc.text = "You throw the perfect amount of daggers that slay the attacking winterfrost slimes";
             }
             else
             {
@@ -129,7 +124,7 @@ public class RdGraveyardManager : MonoBehaviour
             }
 
             // LOAD SUCCESS SCREEN
-            rTitle.text = "You're a born Killer!";
+            rTitle.text = "Cool moves, killer!";
             rGold.text = ((int)goldGained).ToString();
             rHealth.text = ((int)healthLost).ToString();
             rMorale.text = ((int)moraleGained).ToString();
@@ -147,24 +142,21 @@ public class RdGraveyardManager : MonoBehaviour
             // Class flavor text - 0: knight, 1: mage, 2: rouge
             if (playerClass == 0)
             {
-                healthLost += 10;
-                rDesc.text = "You may have overestimated your abilities by jumping head first into " +
-                    "a crowd of undead warriors. You sustain some dents to your armor and manage to " +
-                    "get a few hits in before you're forced to retreat.";
+                healthLost += 5;
+                rDesc.text = "You lose to the slimes. So much for your knighthood training huh. You retreat " +
+                    "for the sake of your remaining honor.";
             }
             else if (playerClass == 1)
             {
-                healthLost += 20;
-                rDesc.text = "A mage shouldn't necessarily jump head first into battle, but you do " +
-                    "anyway. It doesn't turn out well, since as soon as you try to cast your first spell " +
-                    "an arrow from a skeletal archer grazes your skin and flee in pain.";
+                healthLost += 15;
+                rDesc.text = "You throw a fireball at the slimef but miss, you're so disappointed in " +
+                    "yourself that your run away.";
             }
             else if (playerClass == 2)
             {
-                healthLost += 15;
-                rDesc.text = "You make a valiant leap towards the crowd of skeletal warriors, but even " +
-                    "your intricate dance of daggers is soon overwhelmed and you're forced to flee. You " +
-                    "must be getting rusty with the footwork.";
+                healthLost += 10;
+                rDesc.text = "You make a valiant leap towards the slimes, but you fall flat on your face " +
+                    "and you decide to run away in disappointment with yourself.";
             }
             else
             {
@@ -172,7 +164,7 @@ public class RdGraveyardManager : MonoBehaviour
             }
 
             // LOAD FAILURE SCREEN
-            rTitle.text = "The Undead live on!";
+            rTitle.text = "The Slimes Succeed!";
             rGold.text = ((int)goldGained).ToString();
             rMorale.text = ((int)moraleGained).ToString();
             rHealth.text = ((int)healthLost).ToString();
@@ -185,10 +177,10 @@ public class RdGraveyardManager : MonoBehaviour
     }
 
 
-    public void EscapeFight() 
+    public void EscapeFight()
     {
         // playerClass = 2; // FIXME: TESTING ONLY
-       // dexModifier = -10; // FIXME: TESTING ONLY
+        // dexModifier = -10; // FIXME: TESTING ONLY
 
         Debug.Log("Grave DC: " + diceRoll);
 
@@ -196,24 +188,25 @@ public class RdGraveyardManager : MonoBehaviour
 
         Debug.Log("Grave DC + Modifiers: " + diceRoll);
 
-        if (diceRoll >= 5) {
+        if (diceRoll >= 5)
+        {
             // LOAD FAILURE SCREEN
             moraleGained += -Random.Range(5, 16);
             rTitle.text = "You run away from your problems!";
-            rDesc.text = "You run away from slaying the undead menace, but can't help feel an aura of " +
+            rDesc.text = "You run away from the slimes, but can't help feel an aura of " +
                 "disappointment emanating from at least one of the villagers.";
             rGold.text = ((int)goldGained).ToString();
             rMorale.text = ((int)goldGained).ToString();
             rHealth.text = ((int)healthLost).ToString();
             resultCanvas.SetActive(true);
         }
-        else 
+        else
         {
-            moraleGained += -Random.Range(5, 16);
+            moraleGained += -Random.Range(5, 11);
             healthLost += 5;
             rTitle.text = "You run away from your problems!";
-            rDesc.text = "You run away from slaying the undead menace, but one of the skeletal archers " +
-                "notices you and you feel the sharp tip of an arrow slightly graze your skin"; // sickness here?
+            rDesc.text = "You run away from the slimes, but one of them manages to spit a glob " +
+                "of goo on your feet and you trip before getting back up on your feet."; // sickness here?
             rGold.text = ((int)goldGained).ToString();
             rMorale.text = ((int)goldGained).ToString();
             rHealth.text = ((int)healthLost).ToString();
