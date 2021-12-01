@@ -38,6 +38,7 @@ public class RdSlimeManager : MonoBehaviour
     {
         GlobalControl.Instance.Aurum += goldGained;
         Debug.Log("GlobalNewGold: " + GlobalControl.Instance.Aurum);
+        PlayerPrefs.hero.Aurum += goldGained;
     }
     public void SaveMoraleHealth()
     {
@@ -53,6 +54,10 @@ public class RdSlimeManager : MonoBehaviour
         }
         Debug.Log("GlobalNewHealth: " + GlobalControl.Instance.Morale);
         Debug.Log("GlobalNewHealth: " + GlobalControl.Instance.Health);
+
+        PlayerPrefs.hero.Health -= healthLost;
+        PlayerPrefs.hero.Morale += moraleGained;
+        PlayerPrefs.hero.CheckHealthMorale();
     }
 
     // INITIALIZE HERE

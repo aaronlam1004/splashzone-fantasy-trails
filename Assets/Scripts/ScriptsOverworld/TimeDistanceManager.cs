@@ -36,6 +36,7 @@ public class TimeDistanceManager : MonoBehaviour
     // Text that is displayed on the main UI canvas
     [SerializeField] private Text distanceText;
     [SerializeField] private Text daysText;
+    [SerializeField] private Text heroText;
 
 
     // Default should be 4 & 6 and CHECK THE EDITOR TOO
@@ -64,6 +65,14 @@ public class TimeDistanceManager : MonoBehaviour
             // ACCOUNT FOR DISTANCE (if distace is progressing)
             _distance += _randomNormalDistance;
             distanceText.text = ((int)_distance).ToString() + " mi";
+            PlayerPrefs.hero.Distance = ((int)_distance).ToString() + " mi";
+
+            heroText.text = $"<b><i>{PlayerPrefs.hero.Name}</i></b> "+
+                           $"[<color=#FF0000>{PlayerPrefs.hero.Health}</color>/" +
+                           $"<color=#DBAC00>{PlayerPrefs.hero.Morale}</color>]\n" +
+                           $"Strength: {PlayerPrefs.hero.Strength}\n" + 
+                           $"Dexterity: {PlayerPrefs.hero.Dexterity}\n" + 
+                           $"Intelligence: {PlayerPrefs.hero.Intelligence}\n";
 
             // ACCOUNT FOR DAYS (if distace is progressing)
             _days += 1;

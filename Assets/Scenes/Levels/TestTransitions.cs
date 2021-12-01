@@ -15,4 +15,8 @@ public class TestTransitions : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
     }
+    public void goToSthopping()
+    {
+        SceneManager.LoadScene("Sthopping");
+    }
 }

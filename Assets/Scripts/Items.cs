@@ -31,10 +31,10 @@ public static class Items
         new Item("Itchy Cloak", "Not knitted with love", 5, 2, 50),
         new Item("Sleek Boots", "Made for walking", 5, 2, 50),
 
-        new Item("Stinky Berry", "Looks suspiciously like Durian, a fruit from a distant realm you've heard of", 4, 1, 10),
-        new Item("Prickly Plant Juice", "It's the quenchiest!", 4, 1, 10),
-        new Item("Rainbow Corn", "Fills you with pride", 4, 2, 25),
-        new Item("Meat...", "This is technically flavor text", 4, 2, 25),
+        new Item("Stinky Berry", "Looks suspiciously like Durian, a fruit from a distant realm you've heard of.\n\n+5 Health", 4, 5, 10),
+        new Item("Prickly Plant Juice", "It's the quenchiest!\n\n+5 Health", 4, 5, 10),
+        new Item("Rainbow Corn", "Fills you with pride.\n\n+10 Health", 4, 10, 20),
+        new Item("Meat...", "This is technically flavor text.\n\n+10 Health", 4, 10, 20),
 
         new Item("Potion of Gains", "Stop Grinding?!?1? The Grind Never Stops. No Breaks.\n\n+1 Strength", 0, 1, 50),
         new Item("Potion of Haste", "You are speed.\n\n+1 Dexterity", 1, 1, 50),

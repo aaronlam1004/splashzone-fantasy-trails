@@ -14,6 +14,7 @@ public class RdBoulderManager : MonoBehaviour
     {
         GlobalControl.Instance.Morale += moraleGained;
         Debug.Log("GlobalNewMorale: " + GlobalControl.Instance.Morale);
+        PlayerPrefs.hero.Morale += moraleGained;
     }
 
     // Start is called before the first frame update
@@ -21,7 +22,6 @@ public class RdBoulderManager : MonoBehaviour
     {
         moraleGained = Random.Range(10, 21);
         itemIncrease.text = "+" + moraleGained + " to Morale gained.";
-
         // SAVE TO GLOBAL CONTROL
         SaveChanges();
     }

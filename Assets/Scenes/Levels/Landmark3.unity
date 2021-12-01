@@ -678,7 +678,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1079346591}
         m_TargetAssemblyTypeName: TestTransitions, Assembly-CSharp
-        m_MethodName: returnToOverworld
+        m_MethodName: goToSthopping
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1289,7 +1289,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1733143059}
         m_TargetAssemblyTypeName: TestTransitions, Assembly-CSharp
-        m_MethodName: returnToOverworld
+        m_MethodName: goToSthopping
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

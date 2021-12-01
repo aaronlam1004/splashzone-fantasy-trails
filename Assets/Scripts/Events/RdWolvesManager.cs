@@ -33,6 +33,9 @@ public class RdWolvesManager : MonoBehaviour // completely luck based
             GlobalControl.Instance.Food = 0;
         }
         Debug.Log("GlobalNewFood: " + GlobalControl.Instance.Food);
+
+        PlayerPrefs.hero.Morale -= moraleLost;
+        PlayerPrefs.hero.CheckHealthMorale();
     }
 
     // Start is called before the first frame update

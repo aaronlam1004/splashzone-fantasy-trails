@@ -32,7 +32,7 @@ public class CharacterSelect : MonoBehaviour
                 heroChoice.text = "Mage";
                 break;
             case 2:
-                heroChoice.text = "Rouge";
+                heroChoice.text = "Rogue";
                 break;
         }
     }
@@ -130,6 +130,11 @@ public class CharacterSelect : MonoBehaviour
         hero.Name = heroNameInput.text;
         PlayerPrefs.hero = hero;
         SceneManager.LoadScene("Sthopping");
+    }
+
+    public void Leave()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 
     void Start()

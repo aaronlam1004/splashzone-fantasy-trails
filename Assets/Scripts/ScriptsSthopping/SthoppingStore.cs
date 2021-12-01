@@ -75,7 +75,7 @@ public class SthoppingStore : MonoBehaviour
     {
         HeroProfile.text = $"<b><i>{PlayerPrefs.hero.Name}</i></b> "+
                            $"[<color=#FF0000>{PlayerPrefs.hero.Health}</color>/" +
-                           $"<color=#DBAC00>{PlayerPrefs.hero.Morale}</color>/{PlayerPrefs.hero.Clothes}]\n" +
+                           $"<color=#DBAC00>{PlayerPrefs.hero.Morale}</color>]\n" +
                            $"<u>Strength:</u> {PlayerPrefs.hero.Strength}\n" + 
                            $"<u>Dexterity:</u> {PlayerPrefs.hero.Dexterity}\n" + 
                            $"<u>Intelligence:</u> {PlayerPrefs.hero.Intelligence}\n";
@@ -91,7 +91,7 @@ public class SthoppingStore : MonoBehaviour
             Person villager = PlayerPrefs.villagers[i];
             VillagerProfiles[i].text = $"<b><i>{villager.Name}</i></b>" +
                                        $"[<color=#FF0000>{villager.Health}</color>/" +
-                                       $"<color=#DBAC00>{villager.Morale}</color>/{PlayerPrefs.hero.Clothes}]";
+                                       $"<color=#DBAC00>{villager.Morale}</color>]";
         }
     }
 

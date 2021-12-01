@@ -43,6 +43,10 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
             GlobalControl.Instance.Health = 0;
         }
         Debug.Log("GlobalNewClothing: " + GlobalControl.Instance.Health);
+
+        PlayerPrefs.hero.Health -= healthLost;
+        PlayerPrefs.hero.Morale -= moraleLost;
+        PlayerPrefs.hero.CheckHealthMorale();
     }
 
     // Start is called before the first frame update
@@ -91,6 +95,9 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
         moraleDecrease.text = moraleLost + " Morale lost.";
         clothingDecrease.text = clothingLost + " Clothing lost.";
         healthDecrease.text = healthLost + " Health lost.";
+        
+        PlayerPrefs.hero.Health -= healthLost;
+        PlayerPrefs.hero.Morale -= moraleLost;
 
         // SAVE TO GLOBAL CONTROL
         SaveChanges();

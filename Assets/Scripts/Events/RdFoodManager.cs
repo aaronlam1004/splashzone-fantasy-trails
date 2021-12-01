@@ -56,6 +56,8 @@ public class RdFoodManager : MonoBehaviour
             GlobalControl.Instance.Morale = 0; 
         }
         Debug.Log("GlobalNewMorale: " + GlobalControl.Instance.Morale);
+        PlayerPrefs.hero.Morale += MoraleGained;
+        PlayerPrefs.hero.CheckHealthMorale();
     }
 
     // INITIALIZE HERE
@@ -131,7 +133,7 @@ public class RdFoodManager : MonoBehaviour
 
             // LOAD FAILURE SCREEN
             rTitle.text = "A Sad Mistake";
-            rDesc.text = "Haven’t your parents ever taught you not to eat anything you see? " +
+            rDesc.text = "Havenï¿½t your parents ever taught you not to eat anything you see? " +
                 "The fruit was rotten and extremely bitter, leaving you coughing " +
                 "and gagging in a disappointed fit.";
             rFood.text = ((int)FoodGained).ToString();

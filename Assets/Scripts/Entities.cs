@@ -29,7 +29,7 @@ public class Hero : Person
     public int Dexterity { get; set; }
     public int Intelligence { get; set; }
     public int Aurum { get; set; }
-    public int Distance { get; set; }
+    public String Distance { get; set; }
     public String Description { get; set; }
     public Dictionary<Item, int> Items = new Dictionary<Item, int>();
 
@@ -43,7 +43,7 @@ public class Hero : Person
                 this.Intelligence = 5;
                 this.Aurum = 300;
                 this.Description = "A two handed sword wielder who uses Strength. " +
-                "You're a representative of a bordering kingdom ent to help with the " +
+                "You're a representative of a bordering kingdom sent to help with the " +
                 "relief effort.";
                 break;
             case 1:
@@ -76,7 +76,7 @@ public class Hero : Person
             case 1:
                 return "Mage";
             default:
-                return "Rouge";
+                return "Rogue";
         }
     }
 
@@ -98,6 +98,19 @@ public class Hero : Person
         if (Items[item] == 0)
         {
             Items.Remove(item);
+        }
+    }
+
+    public void CheckHealthMorale()
+    {
+        if (this.Health < 0)
+        {
+            this.Health = 0;
+        }
+
+        if (this.Morale < 0)
+        {
+            this.Morale = 0;
         }
     }
 }

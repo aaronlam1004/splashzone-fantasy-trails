@@ -8,6 +8,7 @@ public class Sthopping : MonoBehaviour
     public void VentureOff()
     {
         SceneManager.LoadScene("Overworld");
+        Time.timeScale = 1f;
     }
 
     [Header(("Menus"))]
