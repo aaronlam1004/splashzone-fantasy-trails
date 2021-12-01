@@ -41,9 +41,9 @@ public class EventSpawner : MonoBehaviour
         landmark3Reached = GlobalControl.Instance.l3Reached;
         landmark4Reached = GlobalControl.Instance.l4Reached;
 
-        // Spawn an event around every 6-8 seconds
-        spawnTime = Random.Range(1, 3);
-        spawnDelay = Random.Range(1, 3);
+        // Spawn an event around every 5 seconds
+        spawnTime = Random.Range(5, 6);
+        spawnDelay = Random.Range(5, 6);
         InvokeRepeating("SpawnEvent", spawnTime, spawnDelay);
     }
 

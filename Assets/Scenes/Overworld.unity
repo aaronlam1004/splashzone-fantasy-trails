@@ -644,11 +644,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 669034266, guid: 671c1fc7ebcbad64cb98178f55fd06fa, type: 3}
       propertyPath: timeDistanceDelay
-      value: 1
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 669034266, guid: 671c1fc7ebcbad64cb98178f55fd06fa, type: 3}
       propertyPath: timeDistanceStart
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5782275884847582841, guid: 671c1fc7ebcbad64cb98178f55fd06fa, type: 3}
       propertyPath: m_LocalScale.x
