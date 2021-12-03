@@ -44,6 +44,7 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
         }
         Debug.Log("GlobalNewClothing: " + GlobalControl.Instance.Health);
 
+        PlayerPrefs.hero.Clothes -= clothingLost;
         PlayerPrefs.hero.Health -= healthLost;
         PlayerPrefs.hero.Morale -= moraleLost;
         PlayerPrefs.hero.CheckHealthMorale();
@@ -95,9 +96,6 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
         moraleDecrease.text = moraleLost + " Morale lost.";
         clothingDecrease.text = clothingLost + " Clothing lost.";
         healthDecrease.text = healthLost + " Health lost.";
-        
-        PlayerPrefs.hero.Health -= healthLost;
-        PlayerPrefs.hero.Morale -= moraleLost;
 
         // SAVE TO GLOBAL CONTROL
         SaveChanges();

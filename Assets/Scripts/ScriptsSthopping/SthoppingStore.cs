@@ -73,9 +73,10 @@ public class SthoppingStore : MonoBehaviour
     public TMP_Text HeroGold;
     public void ShowHeroProfile()
     {
-        HeroProfile.text = $"<b><i>{PlayerPrefs.hero.Name}</i></b> "+
+        HeroProfile.text = $"<b><i>{PlayerPrefs.hero.Name}</i>\n</b> "+
                            $"[<color=#FF0000>{PlayerPrefs.hero.Health}</color>/" +
-                           $"<color=#DBAC00>{PlayerPrefs.hero.Morale}</color>]\n" +
+                           $"<color=#DBAC00>{PlayerPrefs.hero.Morale}</color>/" +
+                           $"<color=#797EF6>{PlayerPrefs.hero.Clothes}</color>]\n" +
                            $"<u>Strength:</u> {PlayerPrefs.hero.Strength}\n" + 
                            $"<u>Dexterity:</u> {PlayerPrefs.hero.Dexterity}\n" + 
                            $"<u>Intelligence:</u> {PlayerPrefs.hero.Intelligence}\n";

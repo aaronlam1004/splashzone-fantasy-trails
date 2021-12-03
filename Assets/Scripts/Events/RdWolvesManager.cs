@@ -26,14 +26,8 @@ public class RdWolvesManager : MonoBehaviour // completely luck based
         }
         Debug.Log("GlobalNewMorale: " + GlobalControl.Instance.Morale);
 
-        // Save food lost
-        GlobalControl.Instance.Food -= foodLost;
-        if (GlobalControl.Instance.Food < 0)
-        {
-            GlobalControl.Instance.Food = 0;
-        }
-        Debug.Log("GlobalNewFood: " + GlobalControl.Instance.Food);
-
+        // Save morale & food lost
+        PlayerPrefs.hero.Food -= foodLost;
         PlayerPrefs.hero.Morale -= moraleLost;
         PlayerPrefs.hero.CheckHealthMorale();
     }

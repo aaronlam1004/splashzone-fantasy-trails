@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+// UNUSED IN FAVOR OF PLAYER.PREFS
 // Help from: https://www.sitepoint.com/saving-data-between-scenes-in-unity/
 
 public class GlobalControl : MonoBehaviour
@@ -59,5 +61,11 @@ public class GlobalControl : MonoBehaviour
 
     private void Update()
     {
+        if (PlayerPrefs.hero.Health == 0)
+        {
+            //using the game over scene method 
+            SceneManager.LoadScene("GameOver");
+        }
+
     }
 }

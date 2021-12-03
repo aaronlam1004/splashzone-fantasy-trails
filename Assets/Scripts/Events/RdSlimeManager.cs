@@ -21,9 +21,9 @@ public class RdSlimeManager : MonoBehaviour
     //      Very hard	          25
     //      Nearly impossible	  30
     private int diceRoll;
-    private int intModifier;
-    private int dexModifier;
-    private int strModifier;
+    private int intModifier = PlayerPrefs.hero.Intelligence / 2;
+    private int dexModifier = PlayerPrefs.hero.Dexterity / 2;
+    private int strModifier = PlayerPrefs.hero.Strength / 2;
 
     private bool success;
 
@@ -37,7 +37,6 @@ public class RdSlimeManager : MonoBehaviour
     public void SaveGold()
     {
         GlobalControl.Instance.Aurum += goldGained;
-        Debug.Log("GlobalNewGold: " + GlobalControl.Instance.Aurum);
         PlayerPrefs.hero.Aurum += goldGained;
     }
     public void SaveMoraleHealth()
@@ -52,8 +51,6 @@ public class RdSlimeManager : MonoBehaviour
         {
             GlobalControl.Instance.Health = 0;
         }
-        Debug.Log("GlobalNewHealth: " + GlobalControl.Instance.Morale);
-        Debug.Log("GlobalNewHealth: " + GlobalControl.Instance.Health);
 
         PlayerPrefs.hero.Health -= healthLost;
         PlayerPrefs.hero.Morale += moraleGained;
@@ -68,15 +65,12 @@ public class RdSlimeManager : MonoBehaviour
         // Turn of result canvas initially
         resultCanvas.SetActive(false);
 
-        // LOAD FROM GLOBAL CONTROL
-        playerClass = GlobalControl.Instance.Class;
-        intModifier = 0; // FIXME: retrieve int modifier
-        dexModifier = 0; // FIXME: retrieve dex modifier 
-        strModifier = 0; // FIXME: retrieve str modifier 
+        // LOAD FROM PLAYERPREFS
+        playerClass = PlayerPrefs.hero.HeroType;
 
         // ROLL THE DICE
         diceRoll = Random.Range(1, 21);
-        Debug.Log("Grave DC + Modifier: " + diceRoll);
+        Debug.Log("Slime DC: " + diceRoll);
     }
 
 
@@ -98,9 +92,9 @@ public class RdSlimeManager : MonoBehaviour
         {
             diceRoll += dexModifier; // add dex modifier
         }
-        Debug.Log("Grave DC + Modifier: " + diceRoll);
+        Debug.Log("Slime DC + Modifier: " + diceRoll);
 
-        if (diceRoll >= 10) { success = true; } // Easier than skeletons
+        if (diceRoll >= 15) { success = true; } // Easier than skeletons
         else { success = false; }
 
         if (success) // SUCCESS
@@ -141,7 +135,7 @@ public class RdSlimeManager : MonoBehaviour
         }
         else // FAILURE
         {
-            goldGained += 0;
+            goldGained += -15;
             moraleGained += -Random.Range(10, 16);
 
             // Class flavor text - 0: knight, 1: mage, 2: rouge
@@ -187,11 +181,8 @@ public class RdSlimeManager : MonoBehaviour
         // playerClass = 2; // FIXME: TESTING ONLY
         // dexModifier = -10; // FIXME: TESTING ONLY
 
-        Debug.Log("Grave DC: " + diceRoll);
-
         diceRoll += dexModifier; // add dex modifier
-
-        Debug.Log("Grave DC + Modifiers: " + diceRoll);
+        Debug.Log("Slime DC + Modifiers: " + diceRoll);
 
         if (diceRoll >= 5)
         {

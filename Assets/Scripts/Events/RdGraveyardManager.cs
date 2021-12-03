@@ -21,9 +21,9 @@ public class RdGraveyardManager : MonoBehaviour
     //      Very hard	          25
     //      Nearly impossible	  30
     private int diceRoll;
-    private int intModifier;
-    private int dexModifier;
-    private int strModifier;
+    private int intModifier = PlayerPrefs.hero.Intelligence / 2;
+    private int dexModifier = PlayerPrefs.hero.Dexterity / 2;
+    private int strModifier = PlayerPrefs.hero.Strength / 2;
 
     private bool success;
 
@@ -37,7 +37,7 @@ public class RdGraveyardManager : MonoBehaviour
     public void SaveGold()
     {
         GlobalControl.Instance.Aurum += goldGained;
-        Debug.Log("GlobalNewGold: " + GlobalControl.Instance.Aurum);
+
         PlayerPrefs.hero.Aurum += goldGained;
     }
 
@@ -53,8 +53,6 @@ public class RdGraveyardManager : MonoBehaviour
         {
             GlobalControl.Instance.Health = 0;
         }
-        Debug.Log("GlobalNewHealth: " + GlobalControl.Instance.Morale);
-        Debug.Log("GlobalNewHealth: " + GlobalControl.Instance.Health);
 
         PlayerPrefs.hero.Morale += moraleGained;
         PlayerPrefs.hero.Health -= healthLost;
@@ -69,15 +67,12 @@ public class RdGraveyardManager : MonoBehaviour
         // Turn of result canvas initially
         resultCanvas.SetActive(false);
 
-        // LOAD FROM GLOBAL CONTROL
-        playerClass = GlobalControl.Instance.Class;
-        intModifier = 0; // FIXME: retrieve int modifier
-        dexModifier = 0; // FIXME: retrieve dex modifier 
-        strModifier = 0; // FIXME: retrieve str modifier 
+        // LOAD FROM PLAYERPREFS
+        playerClass = PlayerPrefs.hero.HeroType;
 
         // ROLL THE DICE
         diceRoll = Random.Range(1, 21);
-        Debug.Log("Grave DC + Modifier: " + diceRoll);
+        Debug.Log("Grave DC: " + diceRoll);
     }
 
 
@@ -101,7 +96,7 @@ public class RdGraveyardManager : MonoBehaviour
         }
         Debug.Log("Grave DC + Modifier: " + diceRoll);
 
-        if (diceRoll >= 15) { success = true; }
+        if (diceRoll >= 20) { success = true; }
         else { success = false; }
 
         if (success) // SUCCESS
@@ -147,7 +142,7 @@ public class RdGraveyardManager : MonoBehaviour
         }
         else // FAILURE
         {
-            goldGained += 0;
+            goldGained += -25;
             moraleGained += -Random.Range(10, 16);
 
             // Class flavor text - 0: knight, 1: mage, 2: rouge
@@ -202,7 +197,7 @@ public class RdGraveyardManager : MonoBehaviour
 
         Debug.Log("Grave DC + Modifiers: " + diceRoll);
 
-        if (diceRoll >= 5) {
+        if (diceRoll >= 10) {
             // LOAD FAILURE SCREEN
             moraleGained += -Random.Range(5, 16);
             rTitle.text = "You run away from your problems!";

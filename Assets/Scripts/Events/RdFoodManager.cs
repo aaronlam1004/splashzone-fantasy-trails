@@ -21,8 +21,8 @@ public class RdFoodManager : MonoBehaviour
     //      Very hard	          25
     //      Nearly impossible	  30
     private int diceRoll;
-    private int intModifier;
-    private int dexModifier;
+    private int intModifier = PlayerPrefs.hero.Intelligence / 2;
+    private int dexModifier = PlayerPrefs.hero.Dexterity / 2;
     // private int strModifier;
 
     private bool success;
@@ -46,7 +46,7 @@ public class RdFoodManager : MonoBehaviour
     public void SaveFood() 
     { 
         GlobalControl.Instance.Food += FoodGained;
-        Debug.Log("GlobalNewFood: " + GlobalControl.Instance.Food);
+        PlayerPrefs.hero.Food += FoodGained;
     }
     public void SaveMorale() 
     {
@@ -55,7 +55,6 @@ public class RdFoodManager : MonoBehaviour
         {
             GlobalControl.Instance.Morale = 0; 
         }
-        Debug.Log("GlobalNewMorale: " + GlobalControl.Instance.Morale);
         PlayerPrefs.hero.Morale += MoraleGained;
         PlayerPrefs.hero.CheckHealthMorale();
     }
@@ -68,11 +67,8 @@ public class RdFoodManager : MonoBehaviour
         // Turn of result canvas initially
         resultCanvas.SetActive(false);
 
-        // LOAD FROM GLOBAL CONTROL
-        playerClass = GlobalControl.Instance.Class;
-        intModifier = 0; // FIXME: retrieve int modifier
-        dexModifier = 0; // FIXME: retrieve dex modifier 
-        // strModifier = 0; // FIXME: retrieve str modifier 
+        // LOAD FROM PLAYERPREFS
+        playerClass = PlayerPrefs.hero.HeroType;
 
         // BERRIES EVENT
         if (foodType == "Berries")

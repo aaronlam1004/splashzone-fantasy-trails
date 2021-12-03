@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 620300412}
   - component: {fileID: 620300411}
   m_Layer: 0
-  m_Name: ImageFrame
+  m_Name: BackgroundRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 1611385045}
   - component: {fileID: 1611385044}
   m_Layer: 0
-  m_Name: Image
+  m_Name: ImageFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1092,11 +1092,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1695391341}
+  - component: {fileID: 1695391342}
   - component: {fileID: 1695391340}
   - component: {fileID: 1695391339}
   - component: {fileID: 1695391338}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: Landmark3Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1191,6 +1192,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1695391342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695391337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b7eee7b03aec542aef439f68c35d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprites:
+  - {fileID: 21300000, guid: bcedec274f3b181409c81ceadf078528, type: 3}
+  - {fileID: 21300000, guid: 19b0d75d49bac594ca388e6111de273e, type: 3}
+  - {fileID: 21300000, guid: 2674b09e3d8dd4a4fb43665397840288, type: 3}
+  BackgroundImage: {fileID: 620300411}
 --- !u!1 &1733143057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1583,7 @@ MonoBehaviour:
     You climb and climb and climb, the frost so cold that it seems to burns through
     your clothes and armor. The road to a better future was paved with misery.\n\nStill,
     your eyes light up to a truly magnificent sight. Your heart swells with a newfound
-    hope. The descent was near. \n\n[+20 Morale]"
+    hope. The descent was near. \n\n[+10 Health, +20 Morale]"
 --- !u!222 &1993212881
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -29,6 +29,7 @@ public class Hero : Person
     public int Dexterity { get; set; }
     public int Intelligence { get; set; }
     public int Aurum { get; set; }
+    public int Food { get; set; }
     public String Distance { get; set; }
     public String Description { get; set; }
     public Dictionary<Item, int> Items = new Dictionary<Item, int>();
@@ -42,6 +43,8 @@ public class Hero : Person
                 this.Dexterity = 7;
                 this.Intelligence = 5;
                 this.Aurum = 300;
+                this.Food = 35;
+                this.Clothes = 25;
                 this.Description = "A two handed sword wielder who uses Strength. " +
                 "You're a representative of a bordering kingdom sent to help with the " +
                 "relief effort.";
@@ -51,6 +54,8 @@ public class Hero : Person
                 this.Dexterity = 5;
                 this.Intelligence = 10; 
                 this.Aurum = 250;
+                this.Food = 25;
+                this.Clothes = 20;
                 this.Description = "A book user who utilizes Intelligence. " + 
                 "You’re a researcher who follows the Elemental Pantheon of this world " +
                 "and knows magic from your time studying the elements.";
@@ -60,6 +65,8 @@ public class Hero : Person
                 this.Dexterity = 10;
                 this.Intelligence = 7;
                 this.Aurum = 200;
+                this.Food = 20;
+                this.Clothes = 30;
                 this.Description = "A dagger user who utilizes Dexterity. " + 
                 "You’re a member of a Thieves Guild called the Midnightgarde - " +
                 "a notorious spy network wary of the Lich’s plan.";
@@ -103,14 +110,33 @@ public class Hero : Person
 
     public void CheckHealthMorale()
     {
-        if (this.Health < 0)
+        if (this.Health < 0) // HEALTH
         {
             this.Health = 0;
         }
-
+        if (this.Health > 100)
+        {
+            this.Health = 0;
+        }
+        if (this.Morale > 100) // MORALE
+        {
+            this.Morale = 100;
+        }
         if (this.Morale < 0)
         {
             this.Morale = 0;
+        }
+        if (this.Aurum < 0) // GOLD
+        {
+            this.Aurum = 0;
+        }
+        if (this.Food < 0) // FOOD
+        {
+            this.Food = 0;
+        }
+        if (this.Clothes < 0) // CLOTHING
+        {
+            this.Clothes = 0;
         }
     }
 }

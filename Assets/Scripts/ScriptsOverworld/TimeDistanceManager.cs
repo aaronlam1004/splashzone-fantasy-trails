@@ -69,9 +69,12 @@ public class TimeDistanceManager : MonoBehaviour
             distanceText.text = ((int)_distance).ToString() + " mi";
             PlayerPrefs.hero.Distance = ((int)_distance).ToString() + " mi";
 
-            heroText.text = $"<b><i>{PlayerPrefs.hero.Name}</i></b> "+
-                           $"[<color=#FF0000>{PlayerPrefs.hero.Health}</color>/" +
-                           $"<color=#DBAC00>{PlayerPrefs.hero.Morale}</color>]\n" +
+            heroText.text = $"<b><i>{PlayerPrefs.hero.Name}</i></b>\n" +
+                           $"Health: <color=#FF0000>{PlayerPrefs.hero.Health}</color>\n" +
+                           $"Morale: <color=#DBAC00>{PlayerPrefs.hero.Morale}</color>\n" +
+                           $"Aurums: <color=#DBAC00>{PlayerPrefs.hero.Aurum}</color>\n" +
+                           $"Food: <color=#DBAC00>{PlayerPrefs.hero.Food}</color>\n" +
+                           $"Clothes: <color=#797EF6>{PlayerPrefs.hero.Clothes}</color>\n" +
                            $"Strength: {PlayerPrefs.hero.Strength}\n" + 
                            $"Dexterity: {PlayerPrefs.hero.Dexterity}\n" + 
                            $"Intelligence: {PlayerPrefs.hero.Intelligence}\n";
