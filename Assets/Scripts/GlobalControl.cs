@@ -63,8 +63,7 @@ public class GlobalControl : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerPrefs.hero.Health == 0 && isGameOver == false 
-            || PlayerPrefs.hero.Morale == 0 && isGameOver == false)
+        if (PlayerPrefs.hero.Health == 0 || PlayerPrefs.hero.Morale == 0)
         {
             //using the game over scene method 
             SceneManager.LoadScene("GameOver");
