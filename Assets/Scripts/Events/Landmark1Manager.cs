@@ -8,7 +8,7 @@ public class Landmark1Manager : MonoBehaviour
     public void SaveChanges()
     {
         GlobalControl.Instance.Food += 20;
-        GlobalControl.Instance.Morale += 25;
+        GlobalControl.Instance.Morale += 20;
         GlobalControl.Instance.Int += 1;
         Debug.Log("GlobalNewFood: " + GlobalControl.Instance.Food);
         Debug.Log("GlobalNewMorale: " + GlobalControl.Instance.Morale);

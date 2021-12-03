@@ -867,7 +867,7 @@ MonoBehaviour:
     is a place of refuge, as other victims of the Demon Lich's conquest huddled together
     around scarce campfires to stay warm.\n\nYou tell the abbot of your plight and
     he hands you a small charm and some food for good luck. \n\n[+1 intelligence,
-    +20 food, +25 morale]"
+    +20 food, +20 morale]"
 --- !u!222 &573074930
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public static class Items
         new Item("Potion of Haste", "You are speed.\n\n+1 Dexterity", 1, 1, 150),
         new Item("Potion of Common Sense", "Not many people have it.\n\n+1 Intelligence", 2, 1, 150),
 
-        new Item("White Thaw", "Why are we drinking White Thaw? Because the Thaw is the law.™ Bottled in Nevermelt.\n\n+1 Morale", 3, 5, 25)
+        new Item("White Thaw", "Why are we drinking White Thaw? Because the Thaw is the law.™ Bottled in Nevermelt.\n\n+1 Morale", 3, 1, 2)
     };
 
     public static Item getItemByName(String name)
