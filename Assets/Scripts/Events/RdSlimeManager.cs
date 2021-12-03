@@ -111,7 +111,7 @@ public class RdSlimeManager : MonoBehaviour
             }
             else if (playerClass == 1)
             {
-                rDesc.text = "You blow up the attack slimes with a deftly placed fireball.";
+                rDesc.text = "You blow up the attacking slimes with a deftly placed fireball.";
             }
             else if (playerClass == 2)
             {

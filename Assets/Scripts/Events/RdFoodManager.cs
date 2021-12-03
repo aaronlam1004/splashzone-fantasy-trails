@@ -236,7 +236,7 @@ public class RdFoodManager : MonoBehaviour
         if (success) // SUCCESS
         {
             FoodGained += Random.Range(26, 31);
-            MoraleGained += Random.Range(10, 16);
+            MoraleGained += Random.Range(15, 21);
 
             // Class flavor text - 0: knight, 1: mage, 2: rouge
             if (playerClass == 0)
@@ -253,8 +253,8 @@ public class RdFoodManager : MonoBehaviour
             }
             else if (playerClass == 2)
             {
-                rDesc.text = "You hastefully but gracefully make your way towards the herd. With a " +
-                    "you manage to slay one of the deer with a well-placed throwing knife to the throat.";
+                rDesc.text = "You hastefully but gracefully make your way towards the herd. You " +
+                    "manage to slay one of the deer with a well-placed throwing knife to the throat.";
             }
             else
             {

@@ -12,7 +12,6 @@ public class GameOverManager : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.hero.Morale = 1;
         if (PlayerPrefs.hero.Health == 0)
         {
             PlayerPrefs.hero.Health = 1;
