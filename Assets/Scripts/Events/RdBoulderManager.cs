@@ -15,6 +15,10 @@ public class RdBoulderManager : MonoBehaviour
         GlobalControl.Instance.Morale += moraleGained;
         Debug.Log("GlobalNewMorale: " + GlobalControl.Instance.Morale);
         PlayerPrefs.hero.Morale += moraleGained;
+        if (PlayerPrefs.hero.Morale >= 100)
+        {
+            PlayerPrefs.hero.Morale = 100;
+        }
     }
 
     // Start is called before the first frame update

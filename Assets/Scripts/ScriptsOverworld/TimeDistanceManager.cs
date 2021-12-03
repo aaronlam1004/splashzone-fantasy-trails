@@ -40,14 +40,20 @@ public class TimeDistanceManager : MonoBehaviour
         {
             PlayerPrefs.hero.Health += 1;
         }
+        
         if (PlayerPrefs.hero.Morale > 0)
         {
-            PlayerPrefs.hero.Morale -= Random.Range(0, 3); // LOSE 1 MORALE
+            PlayerPrefs.hero.Morale -= Random.Range(0, 2); // LOSE 0-2 MORALE
             if (PlayerPrefs.hero.Morale <= 0) // LOSE GAME
             {
                 PlayerPrefs.hero.Morale = 0;
             }
+            if (PlayerPrefs.hero.Morale >= 100) // CAP MORALE
+            {
+                PlayerPrefs.hero.Morale = 100;
+            }
         }
+        
         if (PlayerPrefs.hero.Food > 0)
         {
             PlayerPrefs.hero.Food -= 3; // LOSE 1 FOOD PER 2 IN THE PARTY
@@ -56,7 +62,6 @@ public class TimeDistanceManager : MonoBehaviour
                 PlayerPrefs.hero.Food = 0;
             }
         }
-        PlayerPrefs.hero.Morale -= Random.Range(0, 3);
     }
 
 
@@ -78,7 +83,6 @@ public class TimeDistanceManager : MonoBehaviour
     void Start()
     {
         // LOAD FROM GLOBAL CONTROL
-        Time.timeScale = 1f;
         Distance = GlobalControl.Instance.Distance;
         Days = GlobalControl.Instance.Time;
         InvokeRepeating("AddTimeDistance", timeDistanceStart, timeDistanceDelay);
