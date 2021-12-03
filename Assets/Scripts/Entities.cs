@@ -18,7 +18,7 @@ public class Person
         this.Name = personName;
         this.Health = 100;
         this.Morale = 100;
-        this.Clothes = 0;
+        this.Clothes = 0; // FIXME: Clothes system is unimplemented
     }
 }
 
@@ -43,7 +43,7 @@ public class Hero : Person
                 this.Dexterity = 7;
                 this.Intelligence = 5;
                 this.Aurum = 300;
-                this.Food = 35;
+                this.Food = 110;
                 this.Clothes = 25;
                 this.Description = "A two handed sword wielder who uses Strength. " +
                 "You're a representative of a bordering kingdom sent to help with the " +
@@ -54,7 +54,7 @@ public class Hero : Person
                 this.Dexterity = 5;
                 this.Intelligence = 10; 
                 this.Aurum = 250;
-                this.Food = 25;
+                this.Food = 120;
                 this.Clothes = 20;
                 this.Description = "A book user who utilizes Intelligence. " + 
                 "You’re a researcher who follows the Elemental Pantheon of this world " +
@@ -65,7 +65,7 @@ public class Hero : Person
                 this.Dexterity = 10;
                 this.Intelligence = 7;
                 this.Aurum = 200;
-                this.Food = 20;
+                this.Food = 100;
                 this.Clothes = 30;
                 this.Description = "A dagger user who utilizes Dexterity. " + 
                 "You’re a member of a Thieves Guild called the Midnightgarde - " +
@@ -114,11 +114,11 @@ public class Hero : Person
         {
             this.Health = 0;
         }
-        if (this.Health > 100)
+        if (this.Health >= 100)
         {
-            this.Health = 0;
+            this.Health = 100;
         }
-        if (this.Morale > 100) // MORALE
+        if (this.Morale >= 100) // MORALE
         {
             this.Morale = 100;
         }

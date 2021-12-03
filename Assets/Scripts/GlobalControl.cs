@@ -14,6 +14,8 @@ public class GlobalControl : MonoBehaviour
     public float Distance;
     public float Time;
 
+    public bool isGameOver = false;
+
     // Landmark Data [Don't worry about this]
     public bool l1Reached;
     public bool l2Reached;
@@ -61,10 +63,12 @@ public class GlobalControl : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerPrefs.hero.Health == 0)
+        if (PlayerPrefs.hero.Health == 0 && isGameOver == false 
+            || PlayerPrefs.hero.Morale == 0 && isGameOver == false)
         {
             //using the game over scene method 
             SceneManager.LoadScene("GameOver");
+            isGameOver = true;
         }
 
     }

@@ -13,7 +13,7 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
     private int moraleLost = 0; 
     private int clothingLost = 0;
     private int healthLost = 0;
-    private int strModifier;
+    private int strModifier = PlayerPrefs.hero.Strength / 2;
 
     private int diceRoll;
 
@@ -53,9 +53,6 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
     // Start is called before the first frame update
     void Start()
     {
-        // LOAD FROM GLOBAL CONTROL
-        strModifier = 0; // FIXME: retrieve str modifier
-
         // Calculate Roll
         diceRoll = Random.Range(1, 21); // Roll a d20
         diceRoll += strModifier;

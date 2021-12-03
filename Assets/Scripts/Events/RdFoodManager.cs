@@ -74,9 +74,9 @@ public class RdFoodManager : MonoBehaviour
         if (foodType == "Berries")
         {
             diceRoll = Random.Range(1, 21); // Roll a d20
-            diceRoll += intModifier; // add int modifier
-
             Debug.Log("Berries DC: " + diceRoll);
+
+            diceRoll += intModifier; // add int modifier
             Debug.Log("Berries DC + Modifiers: " + diceRoll);
 
             if (diceRoll >= 10)
@@ -104,7 +104,7 @@ public class RdFoodManager : MonoBehaviour
     {
         if (success)
         {
-            FoodGained += Random.Range(10, 16);
+            FoodGained += Random.Range(15, 21);
             MoraleGained += Random.Range(10, 16);
             Debug.Log("Food Gained: " + FoodGained);
             Debug.Log("Morale Gained: " + MoraleGained);
@@ -129,7 +129,7 @@ public class RdFoodManager : MonoBehaviour
 
             // LOAD FAILURE SCREEN
             rTitle.text = "A Sad Mistake";
-            rDesc.text = "Haven�t your parents ever taught you not to eat anything you see? " +
+            rDesc.text = "Haven't your parents ever taught you not to eat anything you see? " +
                 "The fruit was rotten and extremely bitter, leaving you coughing " +
                 "and gagging in a disappointed fit.";
             rFood.text = ((int)FoodGained).ToString();
@@ -144,9 +144,6 @@ public class RdFoodManager : MonoBehaviour
 
     public void DirectHuntDeer() // Harder Dex Check, More Morale, More Food
     {
-        // playerClass = 2; // FIXME: TESTING ONLY
-        // dexModifier = -20; // FIXME: TESTING ONLY
-
         diceRoll += dexModifier; // add dex modifier
         Debug.Log("Deer DC + Modifiers: " + diceRoll);
         if (diceRoll >= 20) { success = true; }
@@ -154,8 +151,8 @@ public class RdFoodManager : MonoBehaviour
 
         if (success) // SUCCESS
         {
-            FoodGained += Random.Range(25, 31);
-            MoraleGained += Random.Range(20, 26);
+            FoodGained += Random.Range(30, 36);
+            MoraleGained += Random.Range(15, 21);
 
             // Class flavor text - 0: knight, 1: mage, 2: rouge
             if (playerClass == 0)
@@ -229,11 +226,8 @@ public class RdFoodManager : MonoBehaviour
         }
     }
 
-    public void SneakyHuntDeer() // Easier dex check, Less Morale, More Food
+    public void SneakyHuntDeer() // Easier dex check, Less Morale, Less Food
     {
-        // playerClass = 2; // FIXME: TESTING ONLY
-        // dexModifier = -20; // FIXME: TESTING ONLY
-
         diceRoll += dexModifier; // add dex modifier
         Debug.Log("Deer DC + Modifiers: " + diceRoll);
         if (diceRoll >= 15) { success = true; }
@@ -241,8 +235,8 @@ public class RdFoodManager : MonoBehaviour
 
         if (success) // SUCCESS
         {
-            FoodGained += Random.Range(15, 21);
-            MoraleGained += Random.Range(15, 21);
+            FoodGained += Random.Range(26, 31);
+            MoraleGained += Random.Range(10, 16);
 
             // Class flavor text - 0: knight, 1: mage, 2: rouge
             if (playerClass == 0)

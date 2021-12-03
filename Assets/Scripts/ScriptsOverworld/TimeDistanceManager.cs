@@ -33,6 +33,25 @@ public class TimeDistanceManager : MonoBehaviour
         GlobalControl.Instance.Time = Days;
     }
 
+    // UPDATE HEALTH AND MORALE OVER TIME
+    public void UpdateHealthMoraleFood()
+    {
+        if (PlayerPrefs.hero.Health < 100)
+        {
+            PlayerPrefs.hero.Health += 1;
+        }
+        PlayerPrefs.hero.Morale -= Random.Range(0, 3);
+        if (PlayerPrefs.hero.Food > 0)
+        {
+            PlayerPrefs.hero.Food -= 3; // LOSE 1 FOOD PER 2 IN THE PARTY
+            if (PlayerPrefs.hero.Food <= 0) // TRIGGER HUNGER
+            {
+                PlayerPrefs.hero.Food = 0;
+            }
+        }
+        PlayerPrefs.hero.Morale -= Random.Range(0, 3);
+    }
+
 
     // Text that is displayed on the main UI canvas
     [SerializeField] private Text distanceText;
@@ -82,8 +101,9 @@ public class TimeDistanceManager : MonoBehaviour
             // ACCOUNT FOR DAYS (if distace is progressing)
             _days += 1;
             daysText.text = ((int)_days).ToString();
-            
+
             // SAVE TO GLOBAL CONTROL
+            UpdateHealthMoraleFood();
             SaveTimeDistance();
         }
     }

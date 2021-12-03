@@ -22,8 +22,7 @@ public class RdItemManager : MonoBehaviour
     {
         GlobalControl.Instance.Food += foodGained;
         GlobalControl.Instance.Aurum += goldGained;
-        Debug.Log("GlobalNewFood: " + GlobalControl.Instance.Food);
-        Debug.Log("GlobalNewGold: " + GlobalControl.Instance.Aurum);
+
         PlayerPrefs.hero.Aurum += goldGained;
     }
     public void SaveStats()
@@ -31,9 +30,7 @@ public class RdItemManager : MonoBehaviour
         GlobalControl.Instance.Int += intGained;
         GlobalControl.Instance.Dex += dexGained;
         GlobalControl.Instance.Str += strGained;
-        Debug.Log("GlobalNewInt: " + GlobalControl.Instance.Int);
-        Debug.Log("GlobalNewDex: " + GlobalControl.Instance.Dex);
-        Debug.Log("GlobalNewStr: " + GlobalControl.Instance.Str);
+
         PlayerPrefs.hero.Intelligence += intGained;
         PlayerPrefs.hero.Dexterity += dexGained;
         PlayerPrefs.hero.Strength += strGained;
