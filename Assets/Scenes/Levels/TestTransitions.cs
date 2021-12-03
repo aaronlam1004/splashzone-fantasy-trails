@@ -21,4 +21,11 @@ public class TestTransitions : MonoBehaviour
     {
         SceneManager.LoadScene("Sthopping");
     }
+    public void GameOver()
+    {
+        SceneManager.LoadScene("Main Menu");
+        GlobalControl.Instance.Distance = 0;
+        GlobalControl.Instance.Time = 0;
+        Time.timeScale = 0f;
+    }
 }
