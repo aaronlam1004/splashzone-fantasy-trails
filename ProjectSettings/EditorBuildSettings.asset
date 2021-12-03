@@ -53,6 +53,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/RdCheckBoulder.unity
     guid: 188cf4c93d1cbe24eb3310c472bf15f2
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 266ea7052fe466b43bf03f3b0064f307
   - enabled: 0
     path: Assets/Scenes/Levels/RdItem.unity
     guid: ea998c3c188d6164eb605f17b18959cb
