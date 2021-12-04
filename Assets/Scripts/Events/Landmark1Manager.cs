@@ -16,7 +16,7 @@ public class Landmark1Manager : MonoBehaviour
 
         PlayerPrefs.hero.Food += 20;
         PlayerPrefs.hero.Morale += 20;
-        PlayerPrefs.hero.Intelligence += 20;
+        PlayerPrefs.hero.Intelligence += 1;
 
     }
     // Start is called before the first frame update
