@@ -71,7 +71,7 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
             moraleLost += 0;
             clothingLost += Random.Range(10, 16);
             healthLost += 5;
-            rText.text = "You emulate a titan of strength, and not even the icicles daggers that compose " +
+            rText.text = "You emulate a titan of strength, and not even the icicle daggers that compose " +
                 "the blizzard's wind can stop you. The same can't be said of your clothes though.";
         }
         else if (diceRoll >= 20) // roll 20+
@@ -79,7 +79,7 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
             moraleLost += 0;
             clothingLost += Random.Range(10, 16);
             healthLost += 0;
-            rText.text = "You are a titan of strength, and not even the icicles daggers that compose " +
+            rText.text = "You are a titan of strength, and not even the icicle daggers that compose " +
                 "the blizzard's frigid winds can stop you. The same can't be said of your clothes though.";
         }
         else // roll less than a 10
@@ -91,7 +91,7 @@ public class RdBlizzardManager : MonoBehaviour // completely luck based
                 "The mountains of Nevermelt are truly a frozen hell for those unprepared.";
         }
         moraleDecrease.text = moraleLost + " Morale lost.";
-        clothingDecrease.text = clothingLost + " Clothing lost.";
+        clothingDecrease.text = clothingLost + " Clothes lost.";
         healthDecrease.text = healthLost + " Health lost.";
 
         // SAVE TO GLOBAL CONTROL

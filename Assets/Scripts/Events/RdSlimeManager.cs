@@ -148,7 +148,7 @@ public class RdSlimeManager : MonoBehaviour
             else if (playerClass == 1)
             {
                 healthLost += 15;
-                rDesc.text = "You throw a fireball at the slimef but miss, you're so disappointed in " +
+                rDesc.text = "You throw a fireball at the slimes but miss, you're so disappointed in " +
                     "yourself that your run away.";
             }
             else if (playerClass == 2)

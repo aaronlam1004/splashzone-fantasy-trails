@@ -36,24 +36,27 @@ public class TimeDistanceManager : MonoBehaviour
     // UPDATE HEALTH AND MORALE OVER TIME
     public void UpdateHealthMoraleFood()
     {
-        if (PlayerPrefs.hero.Health < 100)
+
+        PlayerPrefs.hero.Health += 1;
+        if (PlayerPrefs.hero.Health <= 0) // LOSE GAME
         {
-            PlayerPrefs.hero.Health += 1;
+            PlayerPrefs.hero.Health = 0;
         }
-        
-        if (PlayerPrefs.hero.Morale > 0)
+        if (PlayerPrefs.hero.Health >= 100) // CAP HEALTH
         {
-            PlayerPrefs.hero.Morale -= Random.Range(0, 2); // LOSE 0-2 MORALE
-            if (PlayerPrefs.hero.Morale <= 0) // LOSE GAME
-            {
-                PlayerPrefs.hero.Morale = 0;
-            }
-            if (PlayerPrefs.hero.Morale >= 100) // CAP MORALE
-            {
-                PlayerPrefs.hero.Morale = 100;
-            }
+            PlayerPrefs.hero.Health = 100;
         }
-        
+    
+        PlayerPrefs.hero.Morale -= Random.Range(1, 6); // LOSE 1-5 MORALE
+        if (PlayerPrefs.hero.Morale <= 0) // LOSE GAME
+        {
+            PlayerPrefs.hero.Morale = 0;
+        }
+        if (PlayerPrefs.hero.Morale >= 100) // CAP MORALE
+        {
+            PlayerPrefs.hero.Morale = 100;
+        }
+
         if (PlayerPrefs.hero.Food > 0)
         {
             PlayerPrefs.hero.Food -= 3; // LOSE 1 FOOD PER 2 IN THE PARTY
@@ -100,6 +103,7 @@ public class TimeDistanceManager : MonoBehaviour
             distanceText.text = ((int)_distance).ToString() + " mi";
             PlayerPrefs.hero.Distance = ((int)_distance).ToString() + " mi";
 
+            UpdateHealthMoraleFood();
             heroText.text = $"<b><i>{PlayerPrefs.hero.Name}</i></b>\n" +
                            $"Health: <color=#FF0000>{PlayerPrefs.hero.Health}</color>\n" +
                            $"Morale: <color=#DBAC00>{PlayerPrefs.hero.Morale}</color>\n" +
@@ -115,7 +119,6 @@ public class TimeDistanceManager : MonoBehaviour
             daysText.text = ((int)_days).ToString();
 
             // SAVE TO GLOBAL CONTROL
-            UpdateHealthMoraleFood();
             SaveTimeDistance();
         }
     }

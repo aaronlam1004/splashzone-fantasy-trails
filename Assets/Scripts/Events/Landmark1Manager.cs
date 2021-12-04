@@ -13,6 +13,11 @@ public class Landmark1Manager : MonoBehaviour
         Debug.Log("GlobalNewFood: " + GlobalControl.Instance.Food);
         Debug.Log("GlobalNewMorale: " + GlobalControl.Instance.Morale);
         Debug.Log("GlobalNewInt: " + GlobalControl.Instance.Int);
+
+        PlayerPrefs.hero.Food += 20;
+        PlayerPrefs.hero.Morale += 20;
+        PlayerPrefs.hero.Intelligence += 20;
+
     }
     // Start is called before the first frame update
     void Start()
